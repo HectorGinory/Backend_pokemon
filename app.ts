@@ -27,3 +27,4 @@ app.use("/user", routerUser);
 app.use(handleError)
 
 
+app.listen(3000, () => console.log("Servidor levantado en 3000"));
