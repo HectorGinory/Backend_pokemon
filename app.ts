@@ -19,7 +19,7 @@ const handleError = (err, req, res, next) => {
 }
 
 app.get("/", (req, res) => {
-    res.json({"message": "Todo funciona"})
+    res.json({message: "Todo funciona"})
 })
 app.use(express.json());
 app.use("/pokedex", routerPokemon);
