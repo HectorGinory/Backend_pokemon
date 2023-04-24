@@ -15,6 +15,6 @@ const Pokemon = mongoose.model('Pokemon', new mongoose.Schema({
   updatedAt: {
     type: Date || undefined
   }
-  }))
+  }, {versionKey: false}))
 
 export default Pokemon

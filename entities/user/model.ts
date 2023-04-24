@@ -11,6 +11,6 @@ const User = mongoose.model('User', new mongoose.Schema({
         type: String,
         unique: true
     }
-  }))
+  }, {versionKey: false}))
 
 export default User
