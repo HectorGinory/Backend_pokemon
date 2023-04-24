@@ -2,10 +2,11 @@ import express from 'express';
 import routerPokemon from './entities/pokemon/router.js'
 import routerUser from './entities/user/router.js'
 import mongoose from "mongoose"
+import config from './config.js';
 
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/pokemon').then(()=>{
+mongoose.connect(config.DDBB!).then(()=>{
     console.log('Connected')
 }).catch(()=>{
     console.log('Failed to connect')
