@@ -42,9 +42,10 @@ export const removePokemon = async (id) => {
 }
 
 export const patchPokemon = async (id, pokemon) => {
-    if(!await Pokemon.findOne({"_id": id})) throw new Error('NOT_FOUND')
-    await Pokemon.updateOne({"_id": id}, pokemon)
-    return await Pokemon.findOne({"_id": id})
+    pokemon.updatedAt = new Date()
+    const newPokemon = Pokemon.findOneAndUpdate({"_id": id}, pokemon)
+    if(!newPokemon) throw new Error('NOT_FOUND')
+    return newPokemon
 }
 
 export const updatePokemon = (id, pokemon) => {
