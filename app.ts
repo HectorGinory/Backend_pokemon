@@ -18,6 +18,9 @@ const handleError = (err, req, res, next) => {
     res.status(500).json({err: "SERVER_ERROR"})
 }
 
+app.get("/", (req, res) => {
+    res.json({"message": "Todo funciona"})
+})
 app.use(express.json());
 app.use("/pokedex", routerPokemon);
 app.use("/user", routerUser);
