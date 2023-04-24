@@ -26,9 +26,9 @@ export const userById = async (id) => {
 }
 
 export const createUser = async (user) => {
+    console.log('sadas');
     checkNewUser(user)
     user.password = await bcrypt.hashSync(user.password, config.SALT_ROUND)
-    console.log('sadas');
     const newUser = new User(user)
     await newUser.save()
     return await findAllUser()
